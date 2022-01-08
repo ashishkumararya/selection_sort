@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Max-Min</title>
+    <title>Binary Search</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
     <link
@@ -17,8 +17,10 @@
   <body class="bg-dark text-white">
     <div class="container">
         <header>
-            <div class="main-heading">MAXIMUM-MINIMUM</div>
-            <small><code>Note: Input elements seperated by ','</code></small>
+            <div class="main-heading">Binary Search</div>
+            <small><code>Note: Input elements seperated by ',' </code></small>
+            <br/>
+            <small><code>in ascending order and Search for single result</code></small>
             <br/>
             <a href="example.png">Example</a>
         </header>
@@ -26,14 +28,13 @@
             <form>
                 <label for="userInput-1">Enter the element: </label>
                 [<input class="bg-dark text-white" id="userInput-1" type="text" />]<br>
-                <button type="submit" class="btn-1 btn btn-light btn-block">find</button>
-              </form>
+                <button type="button"  class="btn-1 btn btn-light btn-block">Submit</button><br><br>
+                <label for="userInput-2">Search element: </label>
+                [<input  class="bg-dark text-white" id="userInput-2" type="text" />]<br>
+                <button  class="btn-2 btn btn-light btn-block">find</button>
+            </form>
               <div>Input:[ <span class="Input"></span> ]</div>
-              <div>Output:</div>
-              <ul>
-                <li>Maximum: <span class="output-max"></span></li>
-                <li>Minimum: <span class="output-min"></span></li>
-              </ul>
+              <div>Output:<span class="Output"></span></div>
         </main>
     </div>
     

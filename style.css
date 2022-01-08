@@ -17,20 +17,24 @@ header .main-heading{
     align-items: center;
 }
 
-#userInput-1{
+input{
     outline: none;
     border: transparent;
     padding: 2px;
 }
 
-#userInput-1:focus, 
-#userInput-1:active{
+input:focus, 
+input:active{
     outline: none;
     border: none;
 }
 form{
     margin-top: 50px;
     margin-bottom: 50px;
+}
+#userInput-2{
+ width: 80px;   
+
 }
 
 @media (max-width: 800px) {
@@ -40,6 +44,7 @@ form{
     *{
         font-size: 1rem;
     }
+
 }
 
 @media (max-width: 355px) {
