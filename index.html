@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Binary Search</title>
+    <title>Sorting Algo</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
     <link
@@ -14,29 +14,26 @@
       crossorigin="anonymous"
     />
   </head>
-  <body class="bg-dark text-white">
-    <div class="container">
-        <header>
-            <div class="main-heading">Binary Search</div>
-            <small><code>Note: Input elements seperated by ',' </code></small>
-            <br/>
-            <small><code>in ascending order and Search for single result</code></small>
-            <br/>
-            <a href="example.png">Example</a>
-        </header>
-        <main>
-            <form>
-                <label for="userInput-1">Enter the element: </label>
-                [<input class="bg-dark text-white" id="userInput-1" type="text" />]<br>
-                <button type="button"  class="btn-1 btn btn-light btn-block">Submit</button><br><br>
-                <label for="userInput-2">Search element: </label>
-                [<input  class="bg-dark text-white" id="userInput-2" type="text" />]<br>
-                <button  class="btn-2 btn btn-light btn-block">find</button>
-            </form>
-              <div>Input:[ <span class="Input"></span> ]</div>
-              <div>Output:<span class="Output"></span></div>
-        </main>
-    </div>
-    
+  <body>
+    <h1>Selection Sort</h1>
+    <header>
+      <form>
+        <label for="array-size">Enter the size of array (n) : </label>
+        <input id="array-size"  type="text" />
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </header>
+    <main>
+      <form>
+        <div class="box-generator"></div>
+        <button class="submit" type="submit">click</button>
+      </form>
+    </main>
+    <footer>
+      <ul>
+        <li>Input: <span class="input-arr"></span></li>
+        <li>Output: <span class="output-arr"></span></li>
+      </ul>
+    </footer>
   </body>
 </html>

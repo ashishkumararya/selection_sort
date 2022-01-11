@@ -2,56 +2,26 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     text-decoration: none;
+    /* background-color: teal; */
 }
-header .main-heading{
-    font-size: 2rem;
-}
-.container{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-input{
-    outline: none;
-    border: transparent;
-    padding: 2px;
-}
-
-input:focus, 
-input:active{
+#array-size{
+    width:20%;
     outline: none;
     border: none;
 }
-form{
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-#userInput-2{
- width: 80px;   
 
-}
+.input-box{
+    background-color: teal;
+    font-size: 20px;
+    color: #fff;
+    margin: 0.3%;
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    border: 3px solid black;
+    border-radius: 8px;
+    text-align: center,
 
-@media (max-width: 800px) {
-    header .main-heading{
-        font-size: 1.5rem;
-    }
-    *{
-        font-size: 1rem;
-    }
-
-}
-
-@media (max-width: 355px) {
-    header .main-heading{
-        font-size: 1.3rem;
-    }
-    *{
-        font-size: 0.8rem;
-    }
 }

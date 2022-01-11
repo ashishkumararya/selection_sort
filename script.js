@@ -1,51 +1,79 @@
-const element = document.querySelector("form");
-element.addEventListener("submit", (event) => {
-  event.preventDefault();
-});
+const formSelector = document.querySelector("form");
+const btn = document.querySelector(".btn");
+const boxGenerator = document.querySelector(".box-generator");
+let inputList = [];
+const submitBtn = document.querySelector(".submit");
+const displayInput = document.querySelector(".input-arr");
+const displayOutput = document.querySelector(".output-arr");
 
-const list = document.querySelector("#userInput-1");
-const btn1 = document.querySelector(".btn-1");
-const searchElement = document.querySelector("#userInput-2");
-const btn2 = document.querySelector(".btn-2");
-const displayInput = document.querySelector(".Input");
-const displayOutput = document.querySelector(".Output");
-
-const searchUsingBS = (arr, searchElement) => {
-  let start = 0;
-  let end = arr.length - 1;
-  while (start <= end) {
-    let middle = start + Math.floor((end - start) / 2);
-    console.log(middle);
-    if (arr[middle] < searchElement) {
-      start = middle + 1;
-    } else if (arr[middle] > searchElement) {
-      end = middle - 1;
-    } else {
-      return " Found";
-    }
+const selectionSort = (arr) => {
+  const start = 0;
+  for (let i = 0; i < arr.length; i++) {
+    let last = arr.length - i - 1;
+    let maximumIndex = findTheMax(arr, start, last);
+    swapTwoNumber(arr, maximumIndex, last);
   }
-  return " Not Found";
+  return arr;
+};
+const swapTwoNumber = (arr, first, second) => {
+  let tmp = arr[first];
+  arr[first] = arr[second];
+  arr[second] = tmp;
 };
 
-let data = null;
-btn1.addEventListener("click", (e) => {
+const findTheMax = (arr, start, end) => {
+  let max = start;
+  for (let i = start; i <= end; i++) {
+    if (arr[max] < arr[i]) {
+      max = i;
+    }
+  }
+  return max;
+};
+
+formSelector.addEventListener("submit", (e) => {
   e.preventDefault();
-  const val = list.value.split(",").map((i) => Number(i.trim()));
-  val.includes(NaN) ? alert("Wrong Input") : (data = val);
-  displayInput.textContent = data;
 });
 
-btn2.addEventListener("click", (e) => {
-  let val = null;
-  let count = 0;
-  e.preventDefault();
-  if (!isNaN(Number(searchElement.value))) {
-    console.log(data);
-    console.log(Number(searchElement.value));
-    val = searchUsingBS(data, Number(searchElement.value));
+btn.addEventListener("click", (event) => {
+  const arraySize = document.querySelector("#array-size").value;
+  console.log(arraySize);
+  if (!isNaN(Number(arraySize))) {
+    let items = "";
+    for (let i = 0; i < arraySize; i++) {
+      items += `<input type='text' id='box-${i}' class='input-box'/>`;
+    }
+    boxGenerator.innerHTML = items;
+    setTimeout(() => {
+      let inputBox = document.getElementsByClassName("input-box");
+      for (const item of inputBox) {
+        inputList.push(item);
+      }
+    }, 0);
   } else {
-    count += 1;
-    alert("Something went wrong! Try Again");
+    alert("Wrong input");
   }
-  displayOutput.textContent = count >= 1 ? "No output Found" : val;
+});
+
+submitBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  let finalList = [];
+  inputList.forEach((item) => {
+    if (!isNaN(Number(item.value))) {
+      finalList.push(Number(item.value));
+    } else {
+      alert("Wrong input");
+    }
+  });
+  setTimeout(() => {
+    inputList = [];
+  }, 0);
+  if (inputList.length === 0) {
+    alert("Enter the new size of array");
+  } else {
+    console.log(finalList);
+    displayInput.textContent = finalList;
+    displayOutput.textContent = selectionSort(finalList);
+    console.log(selectionSort(finalList));
+  }
 });
