@@ -5,6 +5,7 @@ let inputList = [];
 const submitBtn = document.querySelector(".submit");
 const displayInput = document.querySelector(".input-arr");
 const displayOutput = document.querySelector(".output-arr");
+const userHint = document.querySelector(".userHint");
 
 const selectionSort = (arr) => {
   const start = 0;
@@ -36,6 +37,7 @@ formSelector.addEventListener("submit", (e) => {
 });
 
 btn.addEventListener("click", (event) => {
+  userHint.textContent = "Fill the Array bellow";
   const arraySize = document.querySelector("#array-size").value;
   console.log(arraySize);
   if (!isNaN(Number(arraySize))) {
@@ -69,11 +71,11 @@ submitBtn.addEventListener("click", (event) => {
     inputList = [];
   }, 0);
   if (inputList.length === 0) {
-    alert("Enter the new size of array");
+    alert("Enter the size of array \nClick on Submit button again😊");
   } else {
     console.log(finalList);
-    displayInput.textContent = finalList;
-    displayOutput.textContent = selectionSort(finalList);
+    displayInput.textContent = " " + finalList + " ";
+    displayOutput.textContent = " " + selectionSort(finalList) + " ";
     console.log(selectionSort(finalList));
   }
 });
