@@ -39,7 +39,6 @@ formSelector.addEventListener("submit", (e) => {
 btn.addEventListener("click", (event) => {
   userHint.textContent = "Fill the Array bellow";
   const arraySize = document.querySelector("#array-size").value;
-  console.log(arraySize);
   if (!isNaN(Number(arraySize))) {
     let items = "";
     for (let i = 0; i < arraySize; i++) {
