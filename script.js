@@ -73,9 +73,7 @@ submitBtn.addEventListener("click", (event) => {
   if (inputList.length === 0) {
     alert("Enter the size of array \nClick on Submit button again😊");
   } else {
-    console.log(finalList);
     displayInput.textContent = " " + finalList + " ";
     displayOutput.textContent = " " + selectionSort(finalList) + " ";
-    console.log(selectionSort(finalList));
   }
 });
